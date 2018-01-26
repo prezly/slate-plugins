@@ -6,7 +6,7 @@ const isEnterHotKey = isKeyHotkey('enter');
 
 const userFriendlyOnEnterBehaviour = () => ({
     onKeyDown: (event, change) => {
-        if (isEnterHotKey(event)) {
+        if (isEnterHotKey(event) && change.value.startBlock.type !== 'paragraph') {
             const currentSelection = change.value.selection;
             const endOfBlockSelection = change.extendToEndOf(change.value.startBlock).value
                 .selection;
