@@ -4,7 +4,7 @@ import { isEqual } from 'lodash';
 
 const isEnterHotKey = isKeyHotkey('enter');
 
-const userFriendlyOnEnterBehaviour = () => ({
+const friendlyOnEnter = () => ({
     onKeyDown: (event, change) => {
         if (isEnterHotKey(event) && change.value.startBlock.type !== 'paragraph') {
             const currentSelection = change.value.selection;
@@ -34,4 +34,4 @@ const userFriendlyOnEnterBehaviour = () => ({
     },
 });
 
-export default userFriendlyOnEnterBehaviour;
+export default friendlyOnEnter;
